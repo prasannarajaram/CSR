@@ -1,4 +1,4 @@
-% Created 2018-01-09 Tue 00:27
+% Created 2018-01-09 Tue 01:03
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper,oneside]{article}
 \usepackage[utf8]{inputenc}
@@ -30,7 +30,7 @@
 
 \maketitle
 \section{Abstract}
-\label{sec:org64722eb}
+\label{sec:orgc2ee538}
 The D-301 blender is the one that blends NC-701 (highly viscous
 liquid) with different products to produce various required
 compositions. NC-701 is unloaded from a truck to the blender manually
@@ -42,12 +42,11 @@ storage tank D-12516 along with piping, valves, pumps and other
 instrumentation to reduce the cycle time of the D-301 blender.
 
 \section{Keywords}
-\label{sec:org38c3ec1}
-Cycle time, process optimization, instrumentation, controller, NC-701,
-unit based controlCycle time, process optimization, instrumentation, controller, NC-701
+\label{sec:orgbb1259a}
+\emph{Cycle time, process optimization, instrumentation, controller, NC-701, unit based control}
 
 \section{Introduction}
-\label{sec:orgd170fe3}
+\label{sec:org44e41e8}
 It is proposed that the material (NC-701) from the truck be unloaded
 to a buffer storage tank D-12516. D-12516 will serve as a holding tank
 when the trucks are available to unload. The material can be
@@ -64,8 +63,12 @@ The following are the two benefits that are expected out of this proposal:
 \item The product stored in D-12516 can be stored and maintained at a
 temperature, most suited for blending
 \end{itemize}
+\section{Overall Scheme}
+\label{sec:org01ee439}
+Below is the overall scheme for the project
+\{r\}\{0.4\textwidth\} \url{file:///home/prasanna/Documents/git/CSR/Overall\_Scheme}
 \section{Process Narrative}
-\label{sec:org6c80278}
+\label{sec:org4ba112a}
 The addition of a buffer storage tank calls for a operating procedure
 to unload from the truck, recycle the product (and regulate
 temperature, if required) and transfer to D-301 when required. It
@@ -73,7 +76,7 @@ should also specify when a direct transfer from tank truck can be
 initiated toward the blender D-301. The following section details the
 process narrative using state based (or unit based control).
 \subsection{State based control}
-\label{sec:org668eee3}
+\label{sec:org6e6a2a7}
 The following is the abstract from the white paper presented by David
 A.Huffman on benefits of State Based Control.
 \begin{quote}
@@ -101,16 +104,16 @@ the plant are listed below:
 \item Line Clear
 \end{enumerate}
 \subsection{Steps}
-\label{sec:orgbce35f5}
+\label{sec:org5231187}
 \subsubsection*{Maintenance Wait}
-\label{sec:org1fd2e46}
+\label{sec:orga2e71ce}
 In this step, the instruments and the control system are in
 maintenance. All the process valves will assume thier safe state. The
 outputs from the control sytem will be in Fail-safe state. All (or
 most) of the instruments are in de-energized state. Most of (or all
 non-critical) the alarms are disabled in this step.
 \subsubsection*{Process Wait}
-\label{sec:org2d6abe9}
+\label{sec:org3124092}
 This is the step in which all the instruments, valves and the control
 system remain energized. The plant is preparing for start up. The
 maintenance/operation team should ensure that all (or almost all)
@@ -120,7 +123,7 @@ instrument out of service alarms. If any of the devices are in
 "out-of-service" state, they should be fixed and put in service for a
 effect a start up.
 \subsubsection*{Recycle}
-\label{sec:orgebf159c}
+\label{sec:org800d4db}
 NC-701 is a highly viscous liquid which needs to be agitated
 periodically to maintain consistency of the product. During the
 recycle step, the temperature of the product can be controlled, if
@@ -151,7 +154,7 @@ desired cooling. Note that, the cooling tower water does not have any
 controls on it which is unlike the steam control line which is used in
 the heating circuit.
 \subsubsection*{Transfer}
-\label{sec:orgbaf5321}
+\label{sec:org2146711}
 During this step, the material from D-12516 will be transferred to
 D-301 blender. The pump MP-516A will be used to effect this transfer
 via the ON-OFF valves EV-20811, ABV-20815 and ABV-20850. During the
@@ -164,20 +167,20 @@ MP-516A which might in turn damage the seal of the pump. D-12516
 should be at least at 60\% level (arbitrary value) to intiate a
 transfer.
 \subsubsection*{Unload}
-\label{sec:orge42e5be}
+\label{sec:org2cb4b1f}
 \subsubsection*{Direct Transfer}
-\label{sec:org43ad277}
+\label{sec:org8cced98}
 \subsubsection*{Line Clear}
-\label{sec:orgd26e37a}
+\label{sec:org181f0e9}
 
 \section{Control Narrative}
-\label{sec:org063910c}
+\label{sec:org12d6324}
 \section{Bill of Material}
-\label{sec:org5cce4cf}
+\label{sec:orgab8dd84}
 \section{Conclusion}
-\label{sec:org2b1a052}
+\label{sec:org47beee0}
 \section{References}
-\label{sec:org1f97103}
+\label{sec:orgbc17407}
 \href{https://www.controlglobal.com/assets/knowledge\_centers/abb/assets/Benefits-of-state-based-control-white-paper.pdf}{1. Benefits of State Based Control}
 \begin{enumerate}
 \item 

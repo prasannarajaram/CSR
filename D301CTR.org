@@ -24,8 +24,7 @@ storage tank D-12516 along with piping, valves, pumps and other
 instrumentation to reduce the cycle time of the D-301 blender.
 
 * Keywords
-Cycle time, process optimization, instrumentation, controller, NC-701,
-unit based controlCycle time, process optimization, instrumentation, controller, NC-701
+/Cycle time, process optimization, instrumentation, controller, NC-701, unit based control/
 
 * Introduction
 It is proposed that the material (NC-701) from the truck be unloaded
@@ -42,6 +41,10 @@ The following are the two benefits that are expected out of this proposal:
   - The truck waiting times can be drastically reduced resulting in lower cost
   - The product stored in D-12516 can be stored and maintained at a
     temperature, most suited for blending
+* Overall Scheme
+Below is the overall scheme for the project
+#+ATTR_LATEX: :float nil :width 0.38\textwidth :placement
+{r}{0.4\textwidth} [[/home/prasanna/Documents/git/CSR/Overall_Scheme]]
 * Process Narrative
 The addition of a buffer storage tank calls for a operating procedure
 to unload from the truck, recycle the product (and regulate
