@@ -208,6 +208,15 @@ Process Wait steps as there are no actions/functions.
 #+ATTR_LATEX: :options angle=90 :width 10cm :float t
 #+CAPTION: Line clear
 [[/home/prasanna/Documents/git/CSR/images/LineClear.png]]
+* Control System and IO summary
+Based on the proposed control narrative, the following IO count would be required to realize the project. 
+| S.No. | IO Type | IO Qty |
+|-------+---------+--------|
+|     1 | AI      |      5 |
+|     2 | AO      |      3 |
+|     3 | DI      |      8 |
+|     4 | DO      |      7 |
+
 * Bill of Material
 * Conclusion
 * References
