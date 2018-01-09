@@ -1,4 +1,4 @@
-% Created 2018-01-09 Tue 01:03
+% Created 2018-01-09 Tue 08:42
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper,oneside]{article}
 \usepackage[utf8]{inputenc}
@@ -15,7 +15,7 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue}
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{4}
 \author{Santhanaraj Chellaiah}
 \date{Jan 8, 2018}
 \title{Cycle Time Reduction of D-301 Blender}
@@ -29,24 +29,24 @@
 \begin{document}
 
 \maketitle
-\section{Abstract}
-\label{sec:orgc2ee538}
-The D-301 blender is the one that blends NC-701 (highly viscous
-liquid) with different products to produce various required
-compositions. NC-701 is unloaded from a truck to the blender manually
-and the blending process is intiated. This however has limited the
-availability of blender to a point where the blender can be used only
-if the truck is available, thus increasing the cycle time for an
-output from D-301. This paper proposes the introduction of a buffer
-storage tank D-12516 along with piping, valves, pumps and other
-instrumentation to reduce the cycle time of the D-301 blender.
+\begin{abstract}
+The D-301 blender is the one that blends NC-701 with different
+products to produce various required compositions. NC-701 is unloaded
+from a truck to the blender manually and the blending process is
+intiated. This however has limited the availability of blender to a
+point where the blender can be used only if the truck is available,
+thus increasing the cycle time for an output from D-301. This paper
+proposes the introduction of a buffer storage tank D-12516 along with
+piping, valves, pumps and other instrumentation to reduce the cycle
+time of the D-301 blender.
+\end{abstract}
 
 \section{Keywords}
-\label{sec:orgbb1259a}
+\label{sec:org6253fd0}
 \emph{Cycle time, process optimization, instrumentation, controller, NC-701, unit based control}
 
 \section{Introduction}
-\label{sec:org44e41e8}
+\label{sec:org5204594}
 It is proposed that the material (NC-701) from the truck be unloaded
 to a buffer storage tank D-12516. D-12516 will serve as a holding tank
 when the trucks are available to unload. The material can be
@@ -64,19 +64,24 @@ The following are the two benefits that are expected out of this proposal:
 temperature, most suited for blending
 \end{itemize}
 \section{Overall Scheme}
-\label{sec:org01ee439}
-Below is the overall scheme for the project
-\{r\}\{0.4\textwidth\} \url{file:///home/prasanna/Documents/git/CSR/Overall\_Scheme}
+\label{sec:org8d85a47}
+Below is the overall scheme for the project. 
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=90,width=10cm]{/home/prasanna/Documents/git/CSR/images/Overall_Scheme.png}
+\caption{Schematic showing truck unloading, D-12516 tank and path to D-301}
+\end{figure}
+
 \section{Process Narrative}
-\label{sec:org4ba112a}
+\label{sec:orgc53ff4b}
 The addition of a buffer storage tank calls for a operating procedure
 to unload from the truck, recycle the product (and regulate
 temperature, if required) and transfer to D-301 when required. It
 should also specify when a direct transfer from tank truck can be
 initiated toward the blender D-301. The following section details the
-process narrative using state based (or unit based control).
+process narrative using state based (or unit based control). :width 15cm
 \subsection{State based control}
-\label{sec:org6e6a2a7}
+\label{sec:org3db9606}
 The following is the abstract from the white paper presented by David
 A.Huffman on benefits of State Based Control.
 \begin{quote}
@@ -104,31 +109,34 @@ the plant are listed below:
 \item Line Clear
 \end{enumerate}
 \subsection{Steps}
-\label{sec:org5231187}
-\subsubsection*{Maintenance Wait}
-\label{sec:orga2e71ce}
+\label{sec:org795b179}
+\subsubsection{Maintenance Wait}
+\label{sec:org89b9d8f}
 In this step, the instruments and the control system are in
-maintenance. All the process valves will assume thier safe state. The
+maintenance. 
+
+All the process valves will assume thier safe state. The
 outputs from the control sytem will be in Fail-safe state. All (or
 most) of the instruments are in de-energized state. Most of (or all
 non-critical) the alarms are disabled in this step.
-\subsubsection*{Process Wait}
-\label{sec:org3124092}
+\subsubsection{Process Wait}
+\label{sec:org2c683be}
 This is the step in which all the instruments, valves and the control
-system remain energized. The plant is preparing for start up. The
-maintenance/operation team should ensure that all (or almost all)
+system remain energized. The plant is preparing for start up. 
+
+The maintenance/operation team should ensure that all (or almost all)
 instruments and valves are in healthy condition. Most of the alarms
 are enabled in this step. Maintenance/operation would look of
 instrument out of service alarms. If any of the devices are in
 "out-of-service" state, they should be fixed and put in service for a
 effect a start up.
-\subsubsection*{Recycle}
-\label{sec:org800d4db}
-NC-701 is a highly viscous liquid which needs to be agitated
-periodically to maintain consistency of the product. During the
-recycle step, the temperature of the product can be controlled, if
-required. NC-701 is ideal for blending when its temperature is around
-45 degree Celcius. 
+\subsubsection{Recycle}
+\label{sec:org1236355}
+During the recycle step, the temperature of the product can be
+controlled, if required. NC-701 is ideal for blending when its
+temperature is around 45 degree Celcius. NC-701 is a highly viscous
+liquid which needs to be agitated periodically to maintain consistency
+of the product.
 
 During the winter months, the product temperature drops because of
 ambient tempertuare. In order to compensate and supplement heat to the
@@ -153,34 +161,110 @@ NC-701 is adjusted using the control valve CV-20812 to effect the
 desired cooling. Note that, the cooling tower water does not have any
 controls on it which is unlike the steam control line which is used in
 the heating circuit.
-\subsubsection*{Transfer}
-\label{sec:org2146711}
+\subsubsection{Transfer}
+\label{sec:org9243021}
 During this step, the material from D-12516 will be transferred to
-D-301 blender. The pump MP-516A will be used to effect this transfer
-via the ON-OFF valves EV-20811, ABV-20815 and ABV-20850. During the
-transfer step, it should also be ensured that the control valves
-CV-20812 and CV-20813 remain completely closed to avoid any
-recirculation. The nitrogen purge line should also remain isolated (or
-closed) using EV-20816.  Before a transfer is initiated, sufficient
-level in D-12516 must be ensured. This will prevent the dry running of
-MP-516A which might in turn damage the seal of the pump. D-12516
-should be at least at 60\% level (arbitrary value) to intiate a
-transfer.
-\subsubsection*{Unload}
-\label{sec:org2cb4b1f}
-\subsubsection*{Direct Transfer}
-\label{sec:org8cced98}
-\subsubsection*{Line Clear}
-\label{sec:org181f0e9}
+D-301 blender. 
 
+The pump MP-516A will be used to effect this transfer via the ON-OFF
+valves EV-20811, ABV-20815 and ABV-20850. During the transfer step, it
+should also be ensured that the control valves CV-20812 and CV-20813
+remain completely closed to avoid any recirculation. The nitrogen
+purge line should also remain isolated (or closed) using EV-20816.
+Before a transfer is initiated, sufficient level in D-12516 must be
+ensured. This will prevent the dry running of MP-516A which might in
+turn damage the seal of the pump. D-12516 should be at least at 60\%
+level (arbitrary value) to intiate a transfer.
+\subsubsection{Unload}
+\label{sec:org1c9c8e2}
+During the unload step, NC-701 is unloaded from the truck to
+D-12516. 
+
+The pump MP-516T is utilized to pump the material from the truck to
+the tank. Since unloading requires manual connection of the unload
+hose to the tank truck, a signal to indicate ready-to-unload is
+provided by the operator. This signal will serve as a permissive to
+starting MP-516T pump. The material will flow via the pump MP-516T,
+ABV-20815 and CV-20813. Note that CV-20813 valve leads into the
+E-12516H heat exchanger. During unload, the steam supply to the
+E-12516H is shut off. The control valve CV-20813 is a fail-open
+valve. It should be ensured that EV-20811 and EV-20816 remain closed
+during the unload step.
+\subsubsection{Direct Transfer}
+\label{sec:org113ec9c}
+During the Direct transfer step, the material from the truck is
+directly transferred to the D-301 blender. This is the present set
+up. Hence this functionality is being retained.
+
+In order to effect a direct transfer, a signal from D-301 blender
+control system is required to inform that the material can be accepted
+by the D-301 blender. After reciept of this signal, the operator shall
+connect the hose to the tank truck and start the MP-516T pump for the
+direct transfer to happen. The NC-701 will flow through EV-20851 and
+EV-20850 to reach D-301. It should be ensured to close EV-20816 and
+ABV-20815 during the direct transfer step to avoid material flowing
+into the D-12516 circuit or into the N\(_{\text{2}}\) line.
+\subsubsection{Line Clear}
+\label{sec:org9dfdd9e}
+The purpose of line clear step is to ensure that NC-701 does not clog
+the line leading to the blender D-301.
+
+The N\(_{\text{2}}\) is purged by opening EV-20816 and EV-20850 valves. N\(_{\text{2}}\)
+enters the D-301 carrying with it any residual NC-701 and leaves D-301
+through a N\(_{\text{2}}\) vent. Line clear operation should be carried out for a
+minimum of 30 minutes (arbitrary value) to ensure complete purging of
+the line leading to D-301. During this step, it should be ensured to
+close the EV-20851 and ABV-20815 to prevent N\(_{\text{2}}\) from flowing
+elsewhere than desired.
 \section{Control Narrative}
-\label{sec:org12d6324}
+\label{sec:org3e672d5}
+The control narrative will pictorically represent the process
+conditions that are required in each of the steps. There are no valve
+line up and vessel line up requirements for Maintenance Wait and
+Process Wait steps as there are no actions/functions.
+\subsection{Recycle}
+\label{sec:org55d0c30}
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=90,width=10cm]{/home/prasanna/Documents/git/CSR/images/Recycle.png}
+\caption{Recycle step}
+\end{figure}
+
+
+\subsection{Transfer}
+\label{sec:orgea78c1a}
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=90,width=10cm]{/home/prasanna/Documents/git/CSR/images/Transfer.png}
+\caption{Transfer from D-12516 to D-301}
+\end{figure}
+\subsection{Unload}
+\label{sec:org520fe34}
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=90,width=10cm]{/home/prasanna/Documents/git/CSR/images/Unload.png}
+\caption{Unload from truck to D-12516}
+\end{figure}
+\subsection{Direct Transfer}
+\label{sec:orgd9a3d52}
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=90,width=10cm]{/home/prasanna/Documents/git/CSR/images/DirectTransfer.png}
+\caption{Unload from truck and Direct transfer to D-301}
+\end{figure}
+\subsection{Line Clear}
+\label{sec:orgddb0af6}
+\begin{figure}[htbp]
+\centering
+\includegraphics[angle=90,width=10cm]{/home/prasanna/Documents/git/CSR/images/LineClear.png}
+\caption{Line clear}
+\end{figure}
 \section{Bill of Material}
-\label{sec:orgab8dd84}
+\label{sec:org22ee9cf}
 \section{Conclusion}
-\label{sec:org47beee0}
+\label{sec:org3177b0c}
 \section{References}
-\label{sec:orgbc17407}
+\label{sec:org1f2eceb}
 \href{https://www.controlglobal.com/assets/knowledge\_centers/abb/assets/Benefits-of-state-based-control-white-paper.pdf}{1. Benefits of State Based Control}
 \begin{enumerate}
 \item 
