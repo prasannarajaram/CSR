@@ -181,6 +181,61 @@ minimum of 30 minutes (arbitrary value) to ensure complete purging of
 the line leading to D-301. During this step, it should be ensured to
 close the EV-20851 and ABV-20815 to prevent N_{2} from flowing
 elsewhere than desired.
+* Step Transition
+During startup, the process would start in Maintenance wait step. The
+transition (or changeover) from one step to another (like from
+maintenance wait to process wait step) may be initiated either
+manually or may happen automatically based on process conditions. The
+following section defines the condition for the transition to happen
+and shows a pictorial step diagram.
+ #+BEGIN_SRC ascii 
+STEP DIAGRAM                                                
+------------                                                
+                                                            
+                       +-----------------+                  
+                       |   MAINTENANCE   |                  
+                       |      WAIT       |                  
+                       +--+--------------+                  
+                        M |           ^                     
+                          V           | M                   
+                       +--------------+--+                  
+         +-------------|     PROCESS     |<-----------+     
+         |           M |      WAIT       |            |     
+         |             +--+--------------+            |     
+         |              M |            ^              |     
+         |                V            | M/A          |     
+         |             +---------------+-+            |     
+         |             |     RECYCLE     |<-----------+     
+         |       +-----|                 |<------+    |     
+         |       |   M +--------+--------+       |    |     
+         |       |            A |                |    |     
+         |       |              V                |    |     
+         |       |     +-----------------+  A    |    |     
+         |       |     |     TRANSFER    |---+   |    |     
+         |       |     |                 |   |   |    |     
+         |       |     +-----------------+   |   |    |     
+         |       |                           |   |    |     
+         |       |                           |   |    |     
+         |       |     +-----------------+   |   |    |     
+         |       +---->|     UNLOAD      |-- | --+    |     
+         +------------>|                 | M |        |     
+         |       |     +-----------------+   |        |     
+         |       |                           |        |     
+         |       |                           |        |     
+         |       |     +-----------------+   |        |     
+         +------------>|     DIRECT      |   |        |     
+         |       |     |    TRANSFER     |   |        |     
+         |       |     +--------+--------+   |        |     
+         |       |            M |            |        |     
+         |       |              V            |        |     
+         |       |     +-----------------+   |        |     
+         |       +---->|    LINE CLEAR   |<--+  A     |     
+         +------------>|                 |------------+     
+                       +-----------------+                  
+M denotes a manual transition initiated by the operator
+A denotes an automatic transition based on process condition
+#+END_SRC
+
 * Control Narrative
 The control narrative will pictorically represent the process
 conditions that are required in each of the steps. There are no valve
@@ -208,18 +263,61 @@ Process Wait steps as there are no actions/functions.
 #+ATTR_LATEX: :options angle=90 :width 10cm :float t
 #+CAPTION: Line clear
 [[/home/prasanna/Documents/git/CSR/images/LineClear.png]]
-* Control System and IO summary
+* P & ID
+<< /Insert P & ID here/ >>
+* IO list
+    #+NAME: IO List 
+    #+CAPTION: IO List for D-12516 tank addition
+    #+ATTR_LATEX: :font \footnotesize :float sidewaystable :placement [hp]
+
+| Tag Name | IO # | I/O Type | Description                                   | Equip. Name | Min. Value | Max. Value | Eng Units | P & ID No | Output Failure State |
+|          | <l>  |          |                                               |             |            |            |           |           |                      |
+|----------+------+----------+-----------------------------------------------+-------------+------------+------------+-----------+-----------+----------------------|
+| PIT20804 | 181  | AI       | D-12516 N2 Pad Pressure [inH2O]               | D12516      | 0          | 25         | inH2O     |           |                      |
+| TT20806  | 182  | AI       | D-12516 Temperature [degC]                    | D12516      | 0          | 200        | DEGC      |           |                      |
+| TT20807  | 162  | AI       | D-12516 recycle line temperature [degC]       | D12516      | 0          | 200        | DEGC      |           |                      |
+| JT20809  | 180  | AI       | MP-516A power meter [hp]                      | MP-516A     | 0          | 25         | hp        |           |                      |
+| TT20808  | 165  | AI       | MP-516A suction temperature [degC]            | MP-516A     | 0          | 200        | DEGC      |           |                      |
+| PIT20810 | 163  | AI       | MP-516A discharge pressure [psig]             | MP-516A     | 0          | 200        | PSIG      |           |                      |
+| TT20853  | 159  | AI       | MP-516T suction temperature [degC]            | MP-516T     | 0          | 200        | DEGC      |           |                      |
+| PIT20852 | 135  | AI       | MP-516T discharge pressure [psig]             | MP-516T     | 0          | 200        | PSIG      |           |                      |
+| JT20854  | 432  | AI       | MP-516T power meter [hp]                      | MP-516T     | 0          | 25         | hp        |           |                      |
+| EY20854  | 401  | DO       | MP-516T should run [on, off]                  | MP-516T     | Off        | On         |           |           | F.Off                |
+| EY20809  | 130  | DO       | MP-516A should run [on, off]                  | MP-516A     | Off        | On         |           |           | F.Off                |
+| EV20850  | 112  | DO       | D-12516/TT to D-301 BV [open, close]          | D12516      | Close      | Open       |           |           | F.Close              |
+| EV20851  | 403  | DO       | MP-516T discharge BV F.C. [open,close]        | D12516      | Close      | Open       |           |           | F.Close              |
+| EV20816  | 131  | DO       | D-12516 Outlet N2 clear BV [open, close]      | D12516      | Close      | Open       |           |           | F.Close              |
+| EV20815  | 133  | DO       | D-12516 Outlet BV [open, close]               | D12516      | Close      | Open       |           |           | F.Close              |
+| EV20811  | 132  | DO       | MP-516A discharge BV F.O. [close, open]       | D12516      | Open       | Close      |           |           | F.Open               |
+| ZS20854  | 109  | DI       | MP-516T is on [on, off]                       | MP-516T     | Off        | On         |           |           |                      |
+| ZS20809  | 130  | DI       | MP-516A is on [on, off]                       | MP-516A     | Off        | On         |           |           |                      |
+| ZSC20850 | 112  | DI       | D-12516/TT to D-301 BV ZSC [closed, open]     | D12516      |            |            |           |           |                      |
+| ZSC20851 | 113  | DI       | MP-516T discharge BV ZSC [close,open]         | D12516      |            |            |           |           |                      |
+| ZSC20816 | 131  | DI       | D-12516 Outlet N2 clear BV ZSC [closed, open] | D12516      |            |            |           |           |                      |
+| ZSC20815 | 133  | DI       | D-12516 Outlet BV ZSC [closed, open]          | D12516      |            |            |           |           |                      |
+| ZSC20811 | 132  | DI       | MP-516A discharge BV ZSC [open, close]        | D12516      | Closed     | Open       |           |           |                      |
+| ZSO20811 | 149  | DI       | MP-516A discharge BV ZSO [close, open]        | D12516      | Open       | Closed     |           |           |                      |
+| CV20812  | 104  | AO       | E-12516C Cooler CV                            | D12516      | 0          | 110        | %         |           | F.Close              |
+| CV20813  | 105  | AO       | E-12516C Heater CV F.O.                       | D12516      | 0          | 110        | %         |           | F.Open               |
+| CV20814  | 102  | AO       | E-12516C Steam CV                             | D12516      | 0          | 110        | %         |           | F.Close              |
+| EV40215  | 428  | DO       | D-301 NC-701 BV [open, close]                 | D301        | Close      | Open       |           |           |                      |
+| ZSC40215 | 429  | DI       | D-301 NC-701 BV ZSC [closed, open]            | D301        |            |            |           |           |                      |
+| LIT20805 | 140  | AI       | D-12516 dP Level [%]                          | D12516      | 0          | 100        | %         |           |                      |
+| LSH20802 | 183  | AI       | D-12516 Level Switch [not High, High]         | D12516      | high       | not high   |           |           |                      |
+
 Based on the proposed control narrative, the following IO count would be required to realize the project. 
 | S.No. | IO Type | IO Qty |
 |-------+---------+--------|
-|     1 | AI      |      5 |
+|     1 | AI      |     11 |
 |     2 | AO      |      3 |
-|     3 | DI      |      8 |
-|     4 | DO      |      7 |
+|     3 | DI      |      9 |
+|     4 | DO      |      8 |
+
+
 
 * Bill of Material
+<< /Insert BOM here/ >>
 * Conclusion
 * References
-[[https://www.controlglobal.com/assets/knowledge_centers/abb/assets/Benefits-of-state-based-control-white-paper.pdf][1. Benefits of State Based Control]]
+1. [[https://www.controlglobal.com/assets/knowledge_centers/abb/assets/Benefits-of-state-based-control-white-paper.pdf][Benefits of State Based Control]]
 2. 
-
