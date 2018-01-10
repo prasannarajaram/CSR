@@ -27,7 +27,9 @@ time of the D-301 blender.
 
 * Keywords
 /Cycle time, process optimization, instrumentation, controller, NC-701, unit based control/
-
+#+latex: \clearpage
+#+attr_latex: toc: H 4
+#+latex: \clearpage
 * Introduction
 It is proposed that the material (NC-701) from the truck be unloaded
 to a buffer storage tank D-12516. D-12516 will serve as a holding tank
@@ -45,18 +47,21 @@ The following are the two benefits that are expected out of this proposal:
     temperature, most suited for blending
 #+latex: \clearpage
 * Overall Scheme
-Below is the overall scheme for the project. 
+Below is the overall scheme for the project. The tag numbers for the
+various equipment shown in overall scheme are indicative. Tags and IO
+type to be finalized based on Process and Control narrative
+finalization.
 #+ATTR_LATEX: :height 12cm :width 15cm :float [hb]
 #+CAPTION: Schematic showing truck unloading, D-12516 tank and path to D-301
 [[/home/prasanna/Documents/git/CSR/images/Overall_Scheme.png]]
-
+#+latex: \clearpage
 * Process Narrative
 The addition of a buffer storage tank calls for a operating procedure
 to unload from the truck, recycle the product (and regulate
 temperature, if required) and transfer to D-301 when required. It
 should also specify when a direct transfer from tank truck can be
 initiated toward the blender D-301. The following section details the
-process narrative using state based (or unit based control). :width 15cm
+process narrative using state based (or unit based control).
 ** State based control
 The following is the abstract from the white paper presented by David
 A.Huffman on benefits of State Based Control.
@@ -279,46 +284,47 @@ valves
 #+latex: \clearpage
 * P & ID
 << /Insert P & ID here/ >>
+#+latex: \clearpage
 * IO list
     #+NAME: IO List 
     #+CAPTION: IO List for D-12516 tank addition
     #+ATT_LATEX: tabular width=\textwidth 
 
-| P&ID # | Tag      | IO # | I/O  | Description with                | Equip.  | Min.   | Max.     |
-|        | Name     |      | Type | Engg.units                      | Name    | Value  | Value    |
-| *TBD*  |          | <l>  |      |                                 |         |        |          |
-|--------+----------+------+------+---------------------------------+---------+--------+----------|
-|        | PIT20804 | 181  | AI   | N2 Pad Pressure [inH2O]         | D12516  | 0      | 25       |
-|        | TT20806  | 182  | AI   | Temperature [degC]              | D12516  | 0      | 200      |
-|        | TT20807  | 162  | AI   | Recycle line temperature [degC] | D12516  | 0      | 200      |
-|        | JT20809  | 180  | AI   | Power meter [hp]                | MP-516A | 0      | 25       |
-|        | TT20808  | 165  | AI   | Suction temperature [degC]      | MP-516A | 0      | 200      |
-|        | PIT20810 | 163  | AI   | Discharge pressure [psig]       | MP-516A | 0      | 200      |
-|        | TT20853  | 159  | AI   | Suction temperature [degC]      | MP-516T | 0      | 200      |
-|        | PIT20852 | 135  | AI   | Discharge pressure [psig]       | MP-516T | 0      | 200      |
-|        | JT20854  | 432  | AI   | power meter [hp]                | MP-516T | 0      | 25       |
-|        | EY20854  | 401  | DO   | Pump should run F.Off           | MP-516T | Off    | On       |
-|        | EY20809  | 130  | DO   | Pump should run F.Off           | MP-516A | Off    | On       |
-|        | EV20850  | 112  | DO   | TT to D-301 BV                  | D12516  | Close  | Open     |
-|        | EV20851  | 403  | DO   | Discharge BV F.C.               | D12516  | Close  | Open     |
-|        | EV20816  | 131  | DO   | Outlet N2 clear BV F.C          | D12516  | Close  | Open     |
-|        | EV20815  | 133  | DO   | Outlet BV F.C                   | D12516  | Close  | Open     |
-|        | EV20811  | 132  | DO   | Discharge BV F.O.               | D12516  | Open   | Close    |
-|        | ZS20854  | 109  | DI   | Pump is on                      | MP-516T | Off    | On       |
-|        | ZS20809  | 130  | DI   | Pump is on                      | MP-516A | Off    | On       |
-|        | ZSC20850 | 112  | DI   | TT to D-301 BV ZSC              | D12516  | close  | Open     |
-|        | ZSC20851 | 113  | DI   | discharge BV ZSC                | D12516  | close  | Open     |
-|        | ZSC20816 | 131  | DI   | Outlet N2 clear BV ZSC          | D12516  | close  | Open     |
-|        | ZSC20815 | 133  | DI   | Outlet BV ZSC                   | D12516  | close  | Open     |
-|        | ZSC20811 | 132  | DI   | Discharge BV ZSC                | D12516  | Closed | Open     |
-|        | ZSO20811 | 149  | DI   | discharge BV ZSO                | D12516  | Open   | Closed   |
-|        | CV20812  | 104  | AO   | E-12516C Cooler CV F.C          | D12516  | 0      | 110      |
-|        | CV20813  | 105  | AO   | E-12516C Heater CV F.O.         | D12516  | 0      | 110      |
-|        | CV20814  | 102  | AO   | E-12516C Steam CV F.C           | D12516  | 0      | 110      |
-|        | EV40215  | 428  | DO   | NC-701 BV                       | D301    | Close  | Open     |
-|        | ZSC40215 | 429  | DI   | NC-701 BV ZSC                   | D301    |        |          |
-|        | LIT20805 | 140  | AI   | dP Level [%]                    | D12516  | 0      | 100      |
-|        | LSH20802 | 183  | AI   | Level Switch                    | D12516  | high   | not high |
+| Tag      | IO # | I/O  | Description with                | Equip.  | Min.   | Max.     |
+| Name     |      | Type | Engg.units                      | Name    | Value  | Value    |
+|          | <l>  |      |                                 |         |        |          |
+|----------+------+------+---------------------------------+---------+--------+----------|
+| PIT20804 | 181  | AI   | N2 Pad Pressure [inH2O]         | D12516  | 0      | 25       |
+| TT20806  | 182  | AI   | Temperature [degC]              | D12516  | 0      | 200      |
+| TT20807  | 162  | AI   | Recycle line temperature [degC] | D12516  | 0      | 200      |
+| JT20809  | 180  | AI   | Power meter [hp]                | MP-516A | 0      | 25       |
+| TT20808  | 165  | AI   | Suction temperature [degC]      | MP-516A | 0      | 200      |
+| PIT20810 | 163  | AI   | Discharge pressure [psig]       | MP-516A | 0      | 200      |
+| TT20853  | 159  | AI   | Suction temperature [degC]      | MP-516T | 0      | 200      |
+| PIT20852 | 135  | AI   | Discharge pressure [psig]       | MP-516T | 0      | 200      |
+| JT20854  | 432  | AI   | power meter [hp]                | MP-516T | 0      | 25       |
+| EY20854  | 401  | DO   | Pump should run F.Off           | MP-516T | Off    | On       |
+| EY20809  | 130  | DO   | Pump should run F.Off           | MP-516A | Off    | On       |
+| EV20850  | 112  | DO   | TT to D-301 BV                  | D12516  | Close  | Open     |
+| EV20851  | 403  | DO   | Discharge BV F.C.               | D12516  | Close  | Open     |
+| EV20816  | 131  | DO   | Outlet N2 clear BV F.C          | D12516  | Close  | Open     |
+| EV20815  | 133  | DO   | Outlet BV F.C                   | D12516  | Close  | Open     |
+| EV20811  | 132  | DO   | Discharge BV F.O.               | D12516  | Open   | Close    |
+| ZS20854  | 109  | DI   | Pump is on                      | MP-516T | Off    | On       |
+| ZS20809  | 130  | DI   | Pump is on                      | MP-516A | Off    | On       |
+| ZSC20850 | 112  | DI   | TT to D-301 BV ZSC              | D12516  | close  | Open     |
+| ZSC20851 | 113  | DI   | discharge BV ZSC                | D12516  | close  | Open     |
+| ZSC20816 | 131  | DI   | Outlet N2 clear BV ZSC          | D12516  | close  | Open     |
+| ZSC20815 | 133  | DI   | Outlet BV ZSC                   | D12516  | close  | Open     |
+| ZSC20811 | 132  | DI   | Discharge BV ZSC                | D12516  | Closed | Open     |
+| ZSO20811 | 149  | DI   | discharge BV ZSO                | D12516  | Open   | Closed   |
+| CV20812  | 104  | AO   | E-12516C Cooler CV F.C          | D12516  | 0      | 110      |
+| CV20813  | 105  | AO   | E-12516C Heater CV F.O.         | D12516  | 0      | 110      |
+| CV20814  | 102  | AO   | E-12516C Steam CV F.C           | D12516  | 0      | 110      |
+| EV40215  | 428  | DO   | NC-701 BV                       | D301    | Close  | Open     |
+| ZSC40215 | 429  | DI   | NC-701 BV ZSC                   | D301    |        |          |
+| LIT20805 | 140  | AI   | dP Level [%]                    | D12516  | 0      | 100      |
+| LSH20802 | 183  | AI   | Level Switch                    | D12516  | high   | not high |
 
 Based on the proposed control narrative, the following IO count would be required to realize the project. 
 | S.No. | IO Type | IO Qty |
@@ -329,10 +335,16 @@ Based on the proposed control narrative, the following IO count would be require
 | 3     | DI      |      9 |
 | 4     | DO      |      8 |
 
-   
+#+latex: \clearpage   
 * Bill of Material
 << /Insert BOM here/ >>
+#+latex: \clearpage
 * Conclusion
+The proposed solution in this paper shall meet its objective of
+reducing the cycle time of D-301 blender by removing the dependency of
+the truck for NC-701 material. It will also ensure that the quality of
+the blending product is improved by regulating the product
+temperature.
 * References
 1. [[https://www.controlglobal.com/assets/knowledge_centers/abb/assets/Benefits-of-state-based-control-white-paper.pdf][Benefits of State Based Control]]
-2. 
+ 

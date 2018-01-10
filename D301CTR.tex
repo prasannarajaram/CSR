@@ -1,4 +1,4 @@
-% Created 2018-01-09 Tue 20:36
+% Created 2018-01-10 Wed 07:14
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper,oneside]{article}
 \usepackage[utf8]{inputenc}
@@ -42,11 +42,12 @@ time of the D-301 blender.
 \end{abstract}
 
 \section{Keywords}
-\label{sec:org753670d}
+\label{sec:org4549011}
 \emph{Cycle time, process optimization, instrumentation, controller, NC-701, unit based control}
-
+\clearpage
+\clearpage
 \section{Introduction}
-\label{sec:orga8b552e}
+\label{sec:org2c29b1c}
 It is proposed that the material (NC-701) from the truck be unloaded
 to a buffer storage tank D-12516. D-12516 will serve as a holding tank
 when the trucks are available to unload. The material can be
@@ -65,24 +66,27 @@ temperature, most suited for blending
 \end{itemize}
 \clearpage
 \section{Overall Scheme}
-\label{sec:orgc809cf8}
-Below is the overall scheme for the project. 
+\label{sec:org4f2b0a7}
+Below is the overall scheme for the project. The tag numbers for the
+various equipment shown in overall scheme are indicative. Tags and IO
+type to be finalized based on Process and Control narrative
+finalization.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/Overall_Scheme.png}
 \caption{Schematic showing truck unloading, D-12516 tank and path to D-301}
 \end{figure}
-
+\clearpage
 \section{Process Narrative}
-\label{sec:org3893a56}
+\label{sec:org8584f7e}
 The addition of a buffer storage tank calls for a operating procedure
 to unload from the truck, recycle the product (and regulate
 temperature, if required) and transfer to D-301 when required. It
 should also specify when a direct transfer from tank truck can be
 initiated toward the blender D-301. The following section details the
-process narrative using state based (or unit based control). :width 15cm
+process narrative using state based (or unit based control).
 \subsection{State based control}
-\label{sec:org11e84d6}
+\label{sec:org8c897aa}
 The following is the abstract from the white paper presented by David
 A.Huffman on benefits of State Based Control.
 \begin{quote}
@@ -110,9 +114,9 @@ the plant are listed below:
 \item Line Clear
 \end{enumerate}
 \subsection{Steps}
-\label{sec:org25ac7b2}
+\label{sec:org5ef16c1}
 \subsubsection{Maintenance Wait}
-\label{sec:org754f666}
+\label{sec:orgcd1bb5a}
 In this step, the instruments and the control system are in
 maintenance. 
 
@@ -121,7 +125,7 @@ outputs from the control system will be in Fail-safe state. All (or
 most) of the instruments are in de-energized state. Most of (or all
 non-critical) the alarms are disabled in this step.
 \subsubsection{Process Wait}
-\label{sec:org79781ad}
+\label{sec:org1a88c80}
 This is the step in which all the instruments, valves and the control
 system remain energized. The plant is preparing for start up. 
 
@@ -132,7 +136,7 @@ instrument out of service alarms. If any of the devices are in
 "out-of-service" state, they should be fixed and put in service for a
 effect a start up.
 \subsubsection{Recycle}
-\label{sec:org171e9c1}
+\label{sec:org835f59a}
 During the recycle step, the temperature of the product can be
 controlled, if required. NC-701 is ideal for blending when its
 temperature is around 45 degree Celsius. NC-701 is a highly viscous
@@ -163,7 +167,7 @@ desired cooling. Note that, the cooling tower water does not have any
 controls on it which is unlike the steam control line which is used in
 the heating circuit.
 \subsubsection{Transfer}
-\label{sec:org8ae47a1}
+\label{sec:orgd073e34}
 During this step, the material from D-12516 will be transferred to
 D-301 blender. 
 
@@ -177,7 +181,7 @@ ensured. This will prevent the dry running of MP-516A which might in
 turn damage the seal of the pump. D-12516 should be at least at 60\%
 level (arbitrary value) to initiate a transfer.
 \subsubsection{Unload}
-\label{sec:orgcaee1f2}
+\label{sec:org96c45f8}
 During the unload step, NC-701 is unloaded from the truck to
 D-12516. 
 
@@ -192,7 +196,7 @@ E-12516H is shut off. The control valve CV-20813 is a fail-open
 valve. It should be ensured that EV-20811 and EV-20816 remain closed
 during the unload step.
 \subsubsection{Direct Transfer}
-\label{sec:org71756c4}
+\label{sec:org54c1e39}
 During the Direct transfer step, the material from the truck is
 directly transferred to the D-301 blender. This is the present set
 up. Hence this functionality is being retained.
@@ -206,7 +210,7 @@ EV-20850 to reach D-301. It should be ensured to close EV-20816 and
 ABV-20815 during the direct transfer step to avoid material flowing
 into the D-12516 circuit or into the N\(_{\text{2}}\) line.
 \subsubsection{Line Clear}
-\label{sec:org26bf68c}
+\label{sec:orgfb544c5}
 The purpose of line clear step is to ensure that NC-701 does not clog
 the line leading to the blender D-301.
 
@@ -219,7 +223,7 @@ close the EV-20851 and ABV-20815 to prevent N\(_{\text{2}}\) from flowing
 elsewhere than desired.
 \clearpage
 \section{Step Transition}
-\label{sec:org382e65c}
+\label{sec:org5e8e7c5}
 During start-up, the process would start in Maintenance wait step. The
 transition (or changeover) from one step to another (like from
 maintenance wait to process wait step) may be initiated either
@@ -271,7 +275,7 @@ C                       +-----------------+
 
 \clearpage
 \section{Control Narrative}
-\label{sec:orgcf89eec}
+\label{sec:org6047efe}
 The control narrative will pictorially represent the process
 conditions that are required in each of the steps. There are no valve
 line up and vessel line up requirements for Maintenance Wait and
@@ -280,7 +284,7 @@ convention, the equipment shown in green colour are
 open/running. Similarly, equipment's in red colour are either
 closed/stopped.
 \subsection{Recycle}
-\label{sec:org0f7fbe4}
+\label{sec:org8e025e7}
 Recycle step has the possibility of either heating or cooling the
 material. When the yellow colored valves are in open position heating
 shall take place. Cooling of material shall happen when the blue
@@ -292,7 +296,7 @@ coloured valves are open.
 \end{figure}
 \clearpage
 \subsection{Transfer}
-\label{sec:org76a4810}
+\label{sec:org2624ece}
 During transfer step, in addition to the lining up of the transfer
 valves, the valves in the recirculation line of the pump (CV-20813 or
 CV-20812) shall be kept open to allow for minimum re-circulation. The
@@ -306,7 +310,7 @@ valves
 \end{figure}
 \clearpage
 \subsection{Unload}
-\label{sec:org0946990}
+\label{sec:org293c949}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/Unload.png}
@@ -314,7 +318,7 @@ valves
 \end{figure}
 \clearpage
 \subsection{Direct Transfer}
-\label{sec:org47658a7}
+\label{sec:org46e5885}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/DirectTransfer.png}
@@ -322,7 +326,7 @@ valves
 \end{figure}
 \clearpage
 \subsection{Line Clear}
-\label{sec:orge7668ce}
+\label{sec:org752612b}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/LineClear.png}
@@ -330,47 +334,47 @@ valves
 \end{figure}
 \clearpage
 \section{P \& ID}
-\label{sec:org5df931e}
+\label{sec:org64a8b6e}
 << \emph{Insert P \& ID here} >>
+\clearpage
 \section{IO list}
-\label{sec:org1f9759e}
+\label{sec:orgb95bcad}
 \begin{center}
-\begin{tabular}{llrlllll}
-P\&ID \# & Tag & IO \# & I/O & Description with & Equip. & Min. & Max.\\
- & Name &  & Type & Engg.units & Name & Value & Value\\
-\textbf{TBD} &  & <l> &  &  &  &  & \\
+\begin{tabular}{lllllll}
+Tag & IO \# & I/O & Description with & Equip. & Min. & Max.\\
+Name &  & Type & Engg.units & Name & Value & Value\\
 \hline
- & PIT20804 & 181 & AI & N2 Pad Pressure [inH2O] & D12516 & 0 & 25\\
- & TT20806 & 182 & AI & Temperature [degC] & D12516 & 0 & 200\\
- & TT20807 & 162 & AI & Recycle line temperature [degC] & D12516 & 0 & 200\\
- & JT20809 & 180 & AI & Power meter [hp] & MP-516A & 0 & 25\\
- & TT20808 & 165 & AI & Suction temperature [degC] & MP-516A & 0 & 200\\
- & PIT20810 & 163 & AI & Discharge pressure [psig] & MP-516A & 0 & 200\\
- & TT20853 & 159 & AI & Suction temperature [degC] & MP-516T & 0 & 200\\
- & PIT20852 & 135 & AI & Discharge pressure [psig] & MP-516T & 0 & 200\\
- & JT20854 & 432 & AI & power meter [hp] & MP-516T & 0 & 25\\
- & EY20854 & 401 & DO & Pump should run F.Off & MP-516T & Off & On\\
- & EY20809 & 130 & DO & Pump should run F.Off & MP-516A & Off & On\\
- & EV20850 & 112 & DO & TT to D-301 BV & D12516 & Close & Open\\
- & EV20851 & 403 & DO & Discharge BV F.C. & D12516 & Close & Open\\
- & EV20816 & 131 & DO & Outlet N2 clear BV F.C & D12516 & Close & Open\\
- & EV20815 & 133 & DO & Outlet BV F.C & D12516 & Close & Open\\
- & EV20811 & 132 & DO & Discharge BV F.O. & D12516 & Open & Close\\
- & ZS20854 & 109 & DI & Pump is on & MP-516T & Off & On\\
- & ZS20809 & 130 & DI & Pump is on & MP-516A & Off & On\\
- & ZSC20850 & 112 & DI & TT to D-301 BV ZSC & D12516 & close & Open\\
- & ZSC20851 & 113 & DI & discharge BV ZSC & D12516 & close & Open\\
- & ZSC20816 & 131 & DI & Outlet N2 clear BV ZSC & D12516 & close & Open\\
- & ZSC20815 & 133 & DI & Outlet BV ZSC & D12516 & close & Open\\
- & ZSC20811 & 132 & DI & Discharge BV ZSC & D12516 & Closed & Open\\
- & ZSO20811 & 149 & DI & discharge BV ZSO & D12516 & Open & Closed\\
- & CV20812 & 104 & AO & E-12516C Cooler CV F.C & D12516 & 0 & 110\\
- & CV20813 & 105 & AO & E-12516C Heater CV F.O. & D12516 & 0 & 110\\
- & CV20814 & 102 & AO & E-12516C Steam CV F.C & D12516 & 0 & 110\\
- & EV40215 & 428 & DO & NC-701 BV & D301 & Close & Open\\
- & ZSC40215 & 429 & DI & NC-701 BV ZSC & D301 &  & \\
- & LIT20805 & 140 & AI & dP Level [\%] & D12516 & 0 & 100\\
- & LSH20802 & 183 & AI & Level Switch & D12516 & high & not high\\
+PIT20804 & 181 & AI & N2 Pad Pressure [inH2O] & D12516 & 0 & 25\\
+TT20806 & 182 & AI & Temperature [degC] & D12516 & 0 & 200\\
+TT20807 & 162 & AI & Recycle line temperature [degC] & D12516 & 0 & 200\\
+JT20809 & 180 & AI & Power meter [hp] & MP-516A & 0 & 25\\
+TT20808 & 165 & AI & Suction temperature [degC] & MP-516A & 0 & 200\\
+PIT20810 & 163 & AI & Discharge pressure [psig] & MP-516A & 0 & 200\\
+TT20853 & 159 & AI & Suction temperature [degC] & MP-516T & 0 & 200\\
+PIT20852 & 135 & AI & Discharge pressure [psig] & MP-516T & 0 & 200\\
+JT20854 & 432 & AI & power meter [hp] & MP-516T & 0 & 25\\
+EY20854 & 401 & DO & Pump should run F.Off & MP-516T & Off & On\\
+EY20809 & 130 & DO & Pump should run F.Off & MP-516A & Off & On\\
+EV20850 & 112 & DO & TT to D-301 BV & D12516 & Close & Open\\
+EV20851 & 403 & DO & Discharge BV F.C. & D12516 & Close & Open\\
+EV20816 & 131 & DO & Outlet N2 clear BV F.C & D12516 & Close & Open\\
+EV20815 & 133 & DO & Outlet BV F.C & D12516 & Close & Open\\
+EV20811 & 132 & DO & Discharge BV F.O. & D12516 & Open & Close\\
+ZS20854 & 109 & DI & Pump is on & MP-516T & Off & On\\
+ZS20809 & 130 & DI & Pump is on & MP-516A & Off & On\\
+ZSC20850 & 112 & DI & TT to D-301 BV ZSC & D12516 & close & Open\\
+ZSC20851 & 113 & DI & discharge BV ZSC & D12516 & close & Open\\
+ZSC20816 & 131 & DI & Outlet N2 clear BV ZSC & D12516 & close & Open\\
+ZSC20815 & 133 & DI & Outlet BV ZSC & D12516 & close & Open\\
+ZSC20811 & 132 & DI & Discharge BV ZSC & D12516 & Closed & Open\\
+ZSO20811 & 149 & DI & discharge BV ZSO & D12516 & Open & Closed\\
+CV20812 & 104 & AO & E-12516C Cooler CV F.C & D12516 & 0 & 110\\
+CV20813 & 105 & AO & E-12516C Heater CV F.O. & D12516 & 0 & 110\\
+CV20814 & 102 & AO & E-12516C Steam CV F.C & D12516 & 0 & 110\\
+EV40215 & 428 & DO & NC-701 BV & D301 & Close & Open\\
+ZSC40215 & 429 & DI & NC-701 BV ZSC & D301 &  & \\
+LIT20805 & 140 & AI & dP Level [\%] & D12516 & 0 & 100\\
+LSH20802 & 183 & AI & Level Switch & D12516 & high & not high\\
 \end{tabular}
 \end{center}
 
@@ -386,16 +390,21 @@ S.No. & IO Type & IO Qty\\
 \end{tabular}
 \end{center}
 
-
+\clearpage
 \section{Bill of Material}
-\label{sec:org30eebde}
+\label{sec:org5f990d2}
 << \emph{Insert BOM here} >>
+\clearpage
 \section{Conclusion}
-\label{sec:org3f013c3}
+\label{sec:org47cfd1e}
+The proposed solution in this paper shall meet its objective of
+reducing the cycle time of D-301 blender by removing the dependency of
+the truck for NC-701 material. It will also ensure that the quality of
+the blending product is improved by regulating the product
+temperature.
 \section{References}
-\label{sec:orgb7395db}
+\label{sec:org0b83c1c}
 \begin{enumerate}
 \item \href{https://www.controlglobal.com/assets/knowledge\_centers/abb/assets/Benefits-of-state-based-control-white-paper.pdf}{Benefits of State Based Control}
-\item 
 \end{enumerate}
 \end{document}
