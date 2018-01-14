@@ -1,0 +1,23 @@
+* Procurement
+** Things to order [0/4]
+1. [ ] Arduino
+2. [ ] Arduino Wifi Shield
+3. [ ] Breadboard
+4. [ ] Relay board
+
+
+** Things to buy locally [0/4]
+1. [ ] Single strand wires
+2. [ ] Soldering Iron
+3. [ ] Lead
+4. [ ] Wax
+
+* Documentation [/]
+1. [ ] Update a block diagram of control system
+* Arduino coding
+* Updatng database with arduino data
+* create web page with process flow diagram
+* Overlay text fields (AI/AO), shapes (DI/DO)
+* With code update data every second from the database
+* Trend data 
+* Archive table data after 00:00 hours
