@@ -1,4 +1,4 @@
-% Created 2018-01-10 Wed 07:14
+% Created 2018-02-28 Wed 13:43
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper,oneside]{article}
 \usepackage[utf8]{inputenc}
@@ -42,12 +42,12 @@ time of the D-301 blender.
 \end{abstract}
 
 \section{Keywords}
-\label{sec:org4549011}
+\label{sec:org13e1735}
 \emph{Cycle time, process optimization, instrumentation, controller, NC-701, unit based control}
 \clearpage
 \clearpage
 \section{Introduction}
-\label{sec:org2c29b1c}
+\label{sec:org0f9ee60}
 It is proposed that the material (NC-701) from the truck be unloaded
 to a buffer storage tank D-12516. D-12516 will serve as a holding tank
 when the trucks are available to unload. The material can be
@@ -66,7 +66,7 @@ temperature, most suited for blending
 \end{itemize}
 \clearpage
 \section{Overall Scheme}
-\label{sec:org4f2b0a7}
+\label{sec:orgcede2cd}
 Below is the overall scheme for the project. The tag numbers for the
 various equipment shown in overall scheme are indicative. Tags and IO
 type to be finalized based on Process and Control narrative
@@ -78,7 +78,7 @@ finalization.
 \end{figure}
 \clearpage
 \section{Process Narrative}
-\label{sec:org8584f7e}
+\label{sec:orge9875e9}
 The addition of a buffer storage tank calls for a operating procedure
 to unload from the truck, recycle the product (and regulate
 temperature, if required) and transfer to D-301 when required. It
@@ -86,7 +86,7 @@ should also specify when a direct transfer from tank truck can be
 initiated toward the blender D-301. The following section details the
 process narrative using state based (or unit based control).
 \subsection{State based control}
-\label{sec:org8c897aa}
+\label{sec:orgbc87b5b}
 The following is the abstract from the white paper presented by David
 A.Huffman on benefits of State Based Control.
 \begin{quote}
@@ -114,9 +114,9 @@ the plant are listed below:
 \item Line Clear
 \end{enumerate}
 \subsection{Steps}
-\label{sec:org5ef16c1}
+\label{sec:orgc1339b2}
 \subsubsection{Maintenance Wait}
-\label{sec:orgcd1bb5a}
+\label{sec:org3aadfb3}
 In this step, the instruments and the control system are in
 maintenance. 
 
@@ -125,7 +125,7 @@ outputs from the control system will be in Fail-safe state. All (or
 most) of the instruments are in de-energized state. Most of (or all
 non-critical) the alarms are disabled in this step.
 \subsubsection{Process Wait}
-\label{sec:org1a88c80}
+\label{sec:orgf567de9}
 This is the step in which all the instruments, valves and the control
 system remain energized. The plant is preparing for start up. 
 
@@ -136,7 +136,7 @@ instrument out of service alarms. If any of the devices are in
 "out-of-service" state, they should be fixed and put in service for a
 effect a start up.
 \subsubsection{Recycle}
-\label{sec:org835f59a}
+\label{sec:orgaa4ce4e}
 During the recycle step, the temperature of the product can be
 controlled, if required. NC-701 is ideal for blending when its
 temperature is around 45 degree Celsius. NC-701 is a highly viscous
@@ -167,7 +167,7 @@ desired cooling. Note that, the cooling tower water does not have any
 controls on it which is unlike the steam control line which is used in
 the heating circuit.
 \subsubsection{Transfer}
-\label{sec:orgd073e34}
+\label{sec:orgaad1953}
 During this step, the material from D-12516 will be transferred to
 D-301 blender. 
 
@@ -181,7 +181,7 @@ ensured. This will prevent the dry running of MP-516A which might in
 turn damage the seal of the pump. D-12516 should be at least at 60\%
 level (arbitrary value) to initiate a transfer.
 \subsubsection{Unload}
-\label{sec:org96c45f8}
+\label{sec:orgc38f0e2}
 During the unload step, NC-701 is unloaded from the truck to
 D-12516. 
 
@@ -196,7 +196,7 @@ E-12516H is shut off. The control valve CV-20813 is a fail-open
 valve. It should be ensured that EV-20811 and EV-20816 remain closed
 during the unload step.
 \subsubsection{Direct Transfer}
-\label{sec:org54c1e39}
+\label{sec:orgefab905}
 During the Direct transfer step, the material from the truck is
 directly transferred to the D-301 blender. This is the present set
 up. Hence this functionality is being retained.
@@ -210,7 +210,7 @@ EV-20850 to reach D-301. It should be ensured to close EV-20816 and
 ABV-20815 during the direct transfer step to avoid material flowing
 into the D-12516 circuit or into the N\(_{\text{2}}\) line.
 \subsubsection{Line Clear}
-\label{sec:orgfb544c5}
+\label{sec:org18a299e}
 The purpose of line clear step is to ensure that NC-701 does not clog
 the line leading to the blender D-301.
 
@@ -223,7 +223,7 @@ close the EV-20851 and ABV-20815 to prevent N\(_{\text{2}}\) from flowing
 elsewhere than desired.
 \clearpage
 \section{Step Transition}
-\label{sec:org5e8e7c5}
+\label{sec:orgf4c9774}
 During start-up, the process would start in Maintenance wait step. The
 transition (or changeover) from one step to another (like from
 maintenance wait to process wait step) may be initiated either
@@ -275,7 +275,7 @@ C                       +-----------------+
 
 \clearpage
 \section{Control Narrative}
-\label{sec:org6047efe}
+\label{sec:org75faa61}
 The control narrative will pictorially represent the process
 conditions that are required in each of the steps. There are no valve
 line up and vessel line up requirements for Maintenance Wait and
@@ -284,7 +284,7 @@ convention, the equipment shown in green colour are
 open/running. Similarly, equipment's in red colour are either
 closed/stopped.
 \subsection{Recycle}
-\label{sec:org8e025e7}
+\label{sec:orgdb748f8}
 Recycle step has the possibility of either heating or cooling the
 material. When the yellow colored valves are in open position heating
 shall take place. Cooling of material shall happen when the blue
@@ -296,7 +296,7 @@ coloured valves are open.
 \end{figure}
 \clearpage
 \subsection{Transfer}
-\label{sec:org2624ece}
+\label{sec:org7e08f27}
 During transfer step, in addition to the lining up of the transfer
 valves, the valves in the recirculation line of the pump (CV-20813 or
 CV-20812) shall be kept open to allow for minimum re-circulation. The
@@ -310,7 +310,7 @@ valves
 \end{figure}
 \clearpage
 \subsection{Unload}
-\label{sec:org293c949}
+\label{sec:orge301371}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/Unload.png}
@@ -318,7 +318,7 @@ valves
 \end{figure}
 \clearpage
 \subsection{Direct Transfer}
-\label{sec:org46e5885}
+\label{sec:orgcfabd35}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/DirectTransfer.png}
@@ -326,7 +326,7 @@ valves
 \end{figure}
 \clearpage
 \subsection{Line Clear}
-\label{sec:org752612b}
+\label{sec:org773a053}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/LineClear.png}
@@ -334,11 +334,11 @@ valves
 \end{figure}
 \clearpage
 \section{P \& ID}
-\label{sec:org64a8b6e}
+\label{sec:org3a1aeff}
 << \emph{Insert P \& ID here} >>
 \clearpage
 \section{IO list}
-\label{sec:orgb95bcad}
+\label{sec:org4745326}
 \begin{center}
 \begin{tabular}{lllllll}
 Tag & IO \# & I/O & Description with & Equip. & Min. & Max.\\
@@ -391,19 +391,366 @@ S.No. & IO Type & IO Qty\\
 \end{center}
 
 \clearpage
+\section{Implementation Strategy}
+\label{sec:orgfb8ca20}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/architecture.jpg}
+\caption{Implementation architecture showing Arduino, SQL dB \& Web-browser interface}
+\end{figure}
+\clearpage
+\subsection{Hardware}
+\label{sec:org978ce6f}
+Based on the above architecture, Arduino Mega 2560 shall be used as
+the microcontroller for interfacing all the field IO. The AO shall be
+converted or treated as Digital output as there are no analog output
+pins on such microcontroller family. The temperature control loop can
+be simulated for the purpose of demonstration. 
+
+The Mega2560 can be interfaced to an Ethernet Shield, by stacking the
+Ethernet Shield over the arduino board. This enables to aruduino to
+communicate to the PC over WiFi. This communication will be used to
+receive process values from the controller to the PC for logging and
+display purposes.  A WiFi router will be used establish the local
+network consisting of arduino (with WiFi shiled) and PC.
+
+The PC is a general purpose laptop that will be used for programming
+the arduino. The PC will also serve as an HMI to display the process
+values and log the process values which will be used for trending.
+
+\subsection{Software}
+\label{sec:org1cc2662}
+The aruduino will be configured as a webserver and the PC will act as
+a client. The following sofware will be used for this implementation:
+\begin{itemize}
+\item Arduino programmer \emph{\emph{check}}
+\item WAMP / LAMP stack
+\begin{itemize}
+\item Windows / Linux
+\item Apache web server
+\item mySQL (database server)
+\item PHP or Python
+\item HTML/CSS/JavaScript
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Arduino programmer \emph{\emph{check}}}
+\label{sec:org12b928f}
+This is used to develop debug and download the code to the
+controller. The control files are created with .ino extension
+
+\subsubsection{WAMP/LAMP stack}
+\label{sec:org1904666}
+\begin{enumerate}
+\item Windows/Linux
+\label{sec:orga807008}
+The operating system for the PC could either be Windows / Linux. This
+will be the host for the other software such as the webserver,
+database server and Python/PHP.
+\item Apache Webserver
+\label{sec:orgd2b9e2b}
+<< \emph{Insert Apache configuration here} >>
+\item mySQL
+\label{sec:orgc3fa1a0}
+<< \emph{Insert mySQL configuration here} >>
+\item PHP/Python
+\label{sec:orgacaee96}
+<< \emph{Insert PHP/Python code here} >> 
+
+PHP code identified for use is listed below. The following code is a
+placeholder and needs to be further customized to have a complete
+working code.
+
+\begin{itemize}
+\item dbconfig.php
+\label{sec:orgc6a7b30}
+\begin{verbatim}
+<?php
+define('DB_USER', "testuser");     // Your database user name
+define('DB_PASSWORD', "test123");  // Your database password (mention your db password here)
+define('DB_DATABASE', "TESTDB");   // Your database name
+define('DB_SERVER', "localhost");  // db server (Mostly will be 'local' host)
+
+?>
+\end{verbatim}
+
+\item dbconnect.php
+\label{sec:orge46cf52}
+\begin{verbatim}
+<?php
+
+class DB_CONNECT {
+
+    // Constructor
+    function __construct() {
+	// Trying to connect to the database
+	$this->connect();
+    }
+
+    // Destructor
+    function __destruct() {
+	// Closing the connection to database
+	$this->close();
+    }
+
+   // Function to connect to the database
+    function connect() {
+
+	//importing dbconfig.php file which contains database credentials 
+	$filepath = realpath (dirname(__FILE__));
+
+	require_once($filepath."/dbconfig.php");
+
+		// Connecting to mysql (phpmyadmin) database
+	$con = mysql_connect(DB_SERVER, DB_USER, DB_PASSWORD) or die(mysql_error());
+
+	// Selecing database
+	$db = mysql_select_db(DB_DATABASE) or die(mysql_error()) or die(mysql_error());
+
+	// returing connection cursor
+	return $con;
+    }
+
+	// Function to close the database
+    function close() {
+	// Closing data base connection
+	mysql_close();
+    }
+
+}
+
+?>
+\end{verbatim}
+\item insert.php
+\label{sec:orgef94d73}
+\begin{verbatim}
+<?php
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
+//Creating Array for JSON response
+$response = array();
+
+// Check if we got the field from the user
+if (isset($_GET['temp']) && isset($_GET['hum'])) {
+
+    $temp = $_GET['temp'];
+    $hum = $_GET['hum'];
+
+    // Include data base connect class
+    $filepath = realpath (dirname(__FILE__));
+	require_once($filepath."/db_connect.php");
+
+
+    // Connecting to database 
+    $db = new DB_CONNECT();
+
+    // Fire SQL query to insert data in weather
+    $result = mysql_query("INSERT INTO weather(temp,hum) VALUES('$temp','$hum')");
+
+    // Check for succesfull execution of query
+    if ($result) {
+	// successfully inserted 
+	$response["success"] = 1;
+	$response["message"] = "Weather successfully created.";
+
+	// Show JSON response
+	echo json_encode($response);
+    } else {
+	// Failed to insert data in database
+	$response["success"] = 0;
+	$response["message"] = "Something has been wrong";
+
+	// Show JSON response
+	echo json_encode($response);
+    }
+} else {
+    // If required parameter is missing
+    $response["success"] = 0;
+    $response["message"] = "Parameter(s) are missing. Please check the request";
+
+    // Show JSON response
+    echo json_encode($response);
+}
+?>
+\end{verbatim}
+\item readall.php
+\label{sec:org33845a3}
+\begin{verbatim}
+<?php
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
+
+//Creating Array for JSON response
+$response = array();
+
+// Include data base connect class
+$filepath = realpath (dirname(__FILE__));
+require_once($filepath."/db_connect.php");
+
+ // Connecting to database 
+$db = new DB_CONNECT();	
+
+ // Fire SQL query to get all data from weather
+$result = mysql_query("SELECT *FROM weather") or die(mysql_error());
+
+// Check for succesfull execution of query and no results found
+if (mysql_num_rows($result) > 0) {
+
+	// Storing the returned array in response
+    $response["weather"] = array();
+
+	// While loop to store all the returned response in variable
+    while ($row = mysql_fetch_array($result)) {
+	// temperoary user array
+	$weather = array();
+	$weather["id"] = $row["id"];
+	$weather["temp"] = $row["temp"];
+		$weather["hum"] = $row["hum"];
+
+		// Push all the items 
+	array_push($response["weather"], $weather);
+    }
+    // On success
+    $response["success"] = 1;
+
+    // Show JSON response
+    echo json_encode($response);
+}	
+else 
+{
+    // If no data is found
+	$response["success"] = 0;
+    $response["message"] = "No data on weather found";
+
+    // Show JSON response
+    echo json_encode($response);
+}
+?>
+\end{verbatim}
+\end{itemize}
+\item HTML/CSS/JavaScript
+\label{sec:orgdc0e42c}
+<< \emph{Insert HTML/CSS/JavaScript code here} >>
+\item {\bfseries\sffamily TODO} 
+\label{sec:org3d54258}
+\begin{itemize}
+\item[{$\square$}] include org-babel execute function for HTML
+\item[{$\square$}] create stylesheet and move CSS information
+\item[{$\square$}] create object for valve - two part valve - left side shows DO - right side shows feedback
+\end{itemize}
+\item HTML code
+\label{sec:org8de05df}
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+  <img src="img/D301.png">
+<p id="tt853"> </p>
+<p id="pt852"> </p>
+<p id="tt807"></p>
+<p id="pit804"></p>
+<p id="lit805"></p>
+<p id="tt806"></p>
+<p id="tt808"></p>
+<p id="pt810"></p>
+<script type="text/javascript">
+    document.getElementById('tt853').innerHTML = "35 degC";
+    document.getElementById('pt852').innerHTML =  "100 psig";
+    document.getElementById('tt807').innerHTML = "23 degC";
+    document.getElementById('pit804').innerHTML = "6 psig";
+    document.getElementById('lit805').innerHTML = "12 %";
+    document.getElementById('tt806').innerHTML = "15 degC";
+    document.getElementById('tt808').innerHTML = "17 degC";
+    document.getElementById('pt810').innerHTML = "20 psig";    
+</script>
+
+</body>
+</html>
+\end{verbatim}
+
+\item CSS code
+\label{sec:orgc4a38b4}
+\begin{verbatim}
+
+#tt853   {
+	position: absolute;
+	left: 350px;
+	top: 110px;
+	color: blue;
+	font-weight: bold;
+}
+#pt852   {
+	position: absolute;
+	left: 525px;
+	top: 110px;
+	color: blue;
+	font-weight: bold;
+}
+#tt807   {
+	position: absolute;
+	left: 340px;
+	top: 290px;
+	color: blue;
+	font-weight: bold;
+}
+#pit804   {
+	position: absolute;
+	left: 170px;
+	top: 510px;
+	color: blue;
+	font-weight: bold;
+}
+#lit805   {
+	position: absolute;
+	left: 260px;
+	top: 595px;
+	color: blue;
+	font-weight: bold;
+}
+#tt806   {
+	position: absolute;
+	left: 189px;
+	top: 685px;
+	color: blue;
+	font-weight: bold;
+}
+#tt808   {
+	position: absolute;
+	left: 410px;
+	top: 670px;
+	color: blue;
+	font-weight: bold;
+}
+#pt810   {
+	position: absolute;
+	left: 610px;
+	top: 670px;
+	color: blue;
+	font-weight: bold;
+}
+\end{verbatim}
+\end{enumerate}
+
 \section{Bill of Material}
-\label{sec:org5f990d2}
+\label{sec:orge28e68a}
 << \emph{Insert BOM here} >>
 \clearpage
 \section{Conclusion}
-\label{sec:org47cfd1e}
+\label{sec:orgc24ae22}
 The proposed solution in this paper shall meet its objective of
 reducing the cycle time of D-301 blender by removing the dependency of
 the truck for NC-701 material. It will also ensure that the quality of
 the blending product is improved by regulating the product
 temperature.
 \section{References}
-\label{sec:org0b83c1c}
+\label{sec:org70fc1e5}
 \begin{enumerate}
 \item \href{https://www.controlglobal.com/assets/knowledge\_centers/abb/assets/Benefits-of-state-based-control-white-paper.pdf}{Benefits of State Based Control}
 \end{enumerate}
