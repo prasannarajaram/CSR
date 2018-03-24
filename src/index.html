@@ -1,28 +1,87 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+<html lang="en">
+    <head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="Vikkey" content="Vivek Gupta & IoTMonk">
+	  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+	  <link rel="stylesheet" type="text/css" href="index.css">
+     
+	 <!-- If you are opening this page from local machine, uncomment belwo line -->
+       
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
+
+	<title>D301 Cycle Time Reduction</title>
+	
 </head>
 <body>
-  <img src="img/D301.png">
-<p id="tt853"> </p>
-<p id="pt852"> </p>
-<p id="tt807"></p>
-<p id="pit804"></p>
-<p id="lit805"></p>
-<p id="tt806"></p>
-<p id="tt808"></p>
-<p id="pt810"></p>
-<script type="text/javascript">
-    document.getElementById('tt853').innerHTML = "35 degC";
-    document.getElementById('pt852').innerHTML =  "100 psig";
-    document.getElementById('tt807').innerHTML = "23 degC";
-    document.getElementById('pit804').innerHTML = "6 psig";
-    document.getElementById('lit805').innerHTML = "12 %";
-    document.getElementById('tt806').innerHTML = "15 degC";
-    document.getElementById('tt808').innerHTML = "17 degC";
-    document.getElementById('pt810').innerHTML = "20 psig";    
-</script>
+	<h2>D301 CYCLE TIME REDUCTION PROJECT</h2>
 
+<!-- <button id="stepButton" type="button"
+onclick="document.getElementById('activestep').innerHTML = Date()">
+Click me to display Date and Time.</button>
+ -->
+<div id="stepButtons">
+	<h2> Select Step </h2>
+<p><button id="stepMWButton" type="button"
+onclick="document.getElementById('activestep').innerHTML = MaintWait()">
+Maintenance Wait</button></p>
+
+<p><button id="stepPWButton" type="button"
+onclick="document.getElementById('activestep').innerHTML = ProcessWait()">
+Process Wait</button></p>
+
+<p><button id="stepRecycleButton" type="button"
+onclick="document.getElementById('activestep').innerHTML = Recycle()">
+Recycle</button></p>
+
+<p><button id="stepTransferButton" type="button"
+onclick="document.getElementById('activestep').innerHTML = Transfer()">
+Transfer</button></p>
+
+<p><button id="stepUnloadButton" type="button"
+onclick="document.getElementById('activestep').innerHTML = Unload()">
+Unload</button></p>
+
+<p><button id="stepDirectTransferButton" type="button"
+onclick="document.getElementById('activestep').innerHTML = DirectTransfer()">
+DirectTransfer</button></p>
+
+
+<p><button id="stepLineClearButton" type="button"
+onclick="document.getElementById('activestep').innerHTML = LineClear()">
+LineClear</button></p>
+
+</div>
+Active Step: <span id="activestep"></span> 
+<p></p>
+<img id="d301png" src="D301.png" alt="D301">
+<p></p>
+<input id="TempSP">
+<button type="button" onclick="TempSP()">Submit</button>
+<p></p>
+Ready To Unload:  <input type="checkbox" id="readytounload" onclick="OpReadyToUnload()">
+<!-- <input type="checkbox" id="readytounload"> -->
+<p id="activestep"> </p>
+PT852<p id="PT852"></p>
+LIT805<p id="LIT805"></p>
+PT810<p id="PT810"></p>
+JT809<p id="JT809"></p>
+MP516A<p id="mp516a"> </p>
+MP516T<p id="mp516t"> </p>
+EV811<p id="EV811"></p>
+ABV812<p id="ABV812"></p>
+ABV813<p id="ABV813"></p>
+ABV814<p id="ABV814"></p>
+ABV815<p id="ABV815"></p>
+ABV816<p id="ABV816"></p>
+ABV851<p id="ABV851"></p>
+ABV850<p id="ABV850"></p>
+<img id="imgABV850">
+PIT804<p id="PIT804"></p>
 </body>
+<script type="text/javascript" src="index.js"></script>
+
 </html>
+
+
+

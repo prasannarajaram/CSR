@@ -1,0 +1,113 @@
+#stepButtons{
+	/* background-color: #4CAF50; /* Green */
+	float: right;
+	/*position: relative;
+	top: 50px;
+	left: 500px;*/
+	/*color: white;*/
+	transition-duration: 0.25s;
+	border-radius: 8px;
+	width: 125px;;
+}
+#imgABV850{
+position: absolute;
+top: 140px;
+left: 700px;
+}
+#d301png   {
+position: relative;
+left: 0px;
+top: 0px;
+}
+#currStep   {
+position: absolute;
+left: 1000px;
+top: 85px;
+color: blue;
+font-weight: bold;
+}
+#mw   {
+position: relative;
+left: 1000px;
+top: 125px;
+}
+#pw   {
+position: relative;
+left: 1000px;
+top: 150px;
+}
+#recycle   {
+position: relative;
+left: 1000px;
+top: 175px;
+}
+#tt853   {
+position: absolute;
+left: 350px;
+top: 125px;
+color: blue;
+font-weight: bold;
+}
+#pt852   {
+position: absolute;
+left: 525px;
+top: 110px;
+color: blue;
+font-weight: bold;
+}
+#tt807   {
+position: absolute;
+left: 340px;
+top: 290px;
+color: blue;
+font-weight: bold;
+}
+#pit804   {
+position: absolute;
+left: 170px;
+top: 510px;
+color: blue;
+font-weight: bold;
+}
+#lit805   {
+position: absolute;
+left: 260px;
+top: 595px;
+color: blue;
+font-weight: bold;
+}
+#tt806   {
+position: absolute;
+left: 189px;
+top: 685px;
+color: blue;
+font-weight: bold;
+}
+#tt808   {
+position: absolute;
+left: 410px;
+top: 670px;
+color: blue;
+font-weight: bold;
+}
+#pt810   {
+position: absolute;
+left: 610px;
+top: 670px;
+color: blue;
+font-weight: bold;
+}
+#temperature   {
+position: absolute;
+left: 0px;
+top: 500px;
+color: blue;
+font-weight: bold;
+}
+#humidity   {
+position: absolute;
+left: 10px;
+top: 200px;
+color: blue;
+font-weight: bold;
+}		
