@@ -1,4 +1,4 @@
-% Created 2018-02-28 Wed 13:43
+% Created 2018-03-03 Sat 08:41
 % Intended LaTeX compiler: pdflatex
 \documentclass[a4paper,oneside]{article}
 \usepackage[utf8]{inputenc}
@@ -24,7 +24,7 @@
  pdftitle={Cycle Time Reduction of D-301 Blender},
  pdfkeywords={Cycle time, process optimization, instrumentation, controller, NC-701, unit based control},
  pdfsubject={},
- pdfcreator={Emacs 27.0.50 (Org mode 9.1.6)}, 
+ pdfcreator={Emacs 27.0.50 (Org mode 9.1.7)}, 
  pdflang={English}}
 \begin{document}
 
@@ -42,12 +42,12 @@ time of the D-301 blender.
 \end{abstract}
 
 \section{Keywords}
-\label{sec:org13e1735}
+\label{sec:org85417ca}
 \emph{Cycle time, process optimization, instrumentation, controller, NC-701, unit based control}
 \clearpage
 \clearpage
 \section{Introduction}
-\label{sec:org0f9ee60}
+\label{sec:orgcced364}
 It is proposed that the material (NC-701) from the truck be unloaded
 to a buffer storage tank D-12516. D-12516 will serve as a holding tank
 when the trucks are available to unload. The material can be
@@ -66,7 +66,7 @@ temperature, most suited for blending
 \end{itemize}
 \clearpage
 \section{Overall Scheme}
-\label{sec:orgcede2cd}
+\label{sec:org3e627cf}
 Below is the overall scheme for the project. The tag numbers for the
 various equipment shown in overall scheme are indicative. Tags and IO
 type to be finalized based on Process and Control narrative
@@ -78,7 +78,7 @@ finalization.
 \end{figure}
 \clearpage
 \section{Process Narrative}
-\label{sec:orge9875e9}
+\label{sec:org02b98af}
 The addition of a buffer storage tank calls for a operating procedure
 to unload from the truck, recycle the product (and regulate
 temperature, if required) and transfer to D-301 when required. It
@@ -86,7 +86,7 @@ should also specify when a direct transfer from tank truck can be
 initiated toward the blender D-301. The following section details the
 process narrative using state based (or unit based control).
 \subsection{State based control}
-\label{sec:orgbc87b5b}
+\label{sec:org740c0ee}
 The following is the abstract from the white paper presented by David
 A.Huffman on benefits of State Based Control.
 \begin{quote}
@@ -114,9 +114,9 @@ the plant are listed below:
 \item Line Clear
 \end{enumerate}
 \subsection{Steps}
-\label{sec:orgc1339b2}
+\label{sec:org462f31e}
 \subsubsection{Maintenance Wait}
-\label{sec:org3aadfb3}
+\label{sec:orge33233e}
 In this step, the instruments and the control system are in
 maintenance. 
 
@@ -125,7 +125,7 @@ outputs from the control system will be in Fail-safe state. All (or
 most) of the instruments are in de-energized state. Most of (or all
 non-critical) the alarms are disabled in this step.
 \subsubsection{Process Wait}
-\label{sec:orgf567de9}
+\label{sec:orgb3394cc}
 This is the step in which all the instruments, valves and the control
 system remain energized. The plant is preparing for start up. 
 
@@ -136,7 +136,7 @@ instrument out of service alarms. If any of the devices are in
 "out-of-service" state, they should be fixed and put in service for a
 effect a start up.
 \subsubsection{Recycle}
-\label{sec:orgaa4ce4e}
+\label{sec:org99b4f33}
 During the recycle step, the temperature of the product can be
 controlled, if required. NC-701 is ideal for blending when its
 temperature is around 45 degree Celsius. NC-701 is a highly viscous
@@ -167,7 +167,7 @@ desired cooling. Note that, the cooling tower water does not have any
 controls on it which is unlike the steam control line which is used in
 the heating circuit.
 \subsubsection{Transfer}
-\label{sec:orgaad1953}
+\label{sec:org2d04a85}
 During this step, the material from D-12516 will be transferred to
 D-301 blender. 
 
@@ -181,7 +181,7 @@ ensured. This will prevent the dry running of MP-516A which might in
 turn damage the seal of the pump. D-12516 should be at least at 60\%
 level (arbitrary value) to initiate a transfer.
 \subsubsection{Unload}
-\label{sec:orgc38f0e2}
+\label{sec:orgba46d5e}
 During the unload step, NC-701 is unloaded from the truck to
 D-12516. 
 
@@ -196,7 +196,7 @@ E-12516H is shut off. The control valve CV-20813 is a fail-open
 valve. It should be ensured that EV-20811 and EV-20816 remain closed
 during the unload step.
 \subsubsection{Direct Transfer}
-\label{sec:orgefab905}
+\label{sec:orgbec51ee}
 During the Direct transfer step, the material from the truck is
 directly transferred to the D-301 blender. This is the present set
 up. Hence this functionality is being retained.
@@ -210,7 +210,7 @@ EV-20850 to reach D-301. It should be ensured to close EV-20816 and
 ABV-20815 during the direct transfer step to avoid material flowing
 into the D-12516 circuit or into the N\(_{\text{2}}\) line.
 \subsubsection{Line Clear}
-\label{sec:org18a299e}
+\label{sec:orgb6a25af}
 The purpose of line clear step is to ensure that NC-701 does not clog
 the line leading to the blender D-301.
 
@@ -223,7 +223,7 @@ close the EV-20851 and ABV-20815 to prevent N\(_{\text{2}}\) from flowing
 elsewhere than desired.
 \clearpage
 \section{Step Transition}
-\label{sec:orgf4c9774}
+\label{sec:org1fdfc97}
 During start-up, the process would start in Maintenance wait step. The
 transition (or changeover) from one step to another (like from
 maintenance wait to process wait step) may be initiated either
@@ -275,7 +275,7 @@ C                       +-----------------+
 
 \clearpage
 \section{Control Narrative}
-\label{sec:org75faa61}
+\label{sec:org06b84f6}
 The control narrative will pictorially represent the process
 conditions that are required in each of the steps. There are no valve
 line up and vessel line up requirements for Maintenance Wait and
@@ -284,7 +284,7 @@ convention, the equipment shown in green colour are
 open/running. Similarly, equipment's in red colour are either
 closed/stopped.
 \subsection{Recycle}
-\label{sec:orgdb748f8}
+\label{sec:org002cfc2}
 Recycle step has the possibility of either heating or cooling the
 material. When the yellow colored valves are in open position heating
 shall take place. Cooling of material shall happen when the blue
@@ -296,7 +296,7 @@ coloured valves are open.
 \end{figure}
 \clearpage
 \subsection{Transfer}
-\label{sec:org7e08f27}
+\label{sec:orga223402}
 During transfer step, in addition to the lining up of the transfer
 valves, the valves in the recirculation line of the pump (CV-20813 or
 CV-20812) shall be kept open to allow for minimum re-circulation. The
@@ -310,7 +310,7 @@ valves
 \end{figure}
 \clearpage
 \subsection{Unload}
-\label{sec:orge301371}
+\label{sec:org2605d59}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/Unload.png}
@@ -318,7 +318,7 @@ valves
 \end{figure}
 \clearpage
 \subsection{Direct Transfer}
-\label{sec:orgcfabd35}
+\label{sec:orgb141010}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/DirectTransfer.png}
@@ -326,7 +326,7 @@ valves
 \end{figure}
 \clearpage
 \subsection{Line Clear}
-\label{sec:org773a053}
+\label{sec:orgdc7d922}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/LineClear.png}
@@ -334,11 +334,11 @@ valves
 \end{figure}
 \clearpage
 \section{P \& ID}
-\label{sec:org3a1aeff}
+\label{sec:org35340e9}
 << \emph{Insert P \& ID here} >>
 \clearpage
 \section{IO list}
-\label{sec:org4745326}
+\label{sec:org29f0410}
 \begin{center}
 \begin{tabular}{lllllll}
 Tag & IO \# & I/O & Description with & Equip. & Min. & Max.\\
@@ -392,7 +392,7 @@ S.No. & IO Type & IO Qty\\
 
 \clearpage
 \section{Implementation Strategy}
-\label{sec:orgfb8ca20}
+\label{sec:org036fe17}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=15cm,height=12cm]{/home/prasanna/Documents/git/CSR/images/architecture.jpg}
@@ -400,7 +400,7 @@ S.No. & IO Type & IO Qty\\
 \end{figure}
 \clearpage
 \subsection{Hardware}
-\label{sec:org978ce6f}
+\label{sec:orgee5b227}
 Based on the above architecture, Arduino Mega 2560 shall be used as
 the microcontroller for interfacing all the field IO. The AO shall be
 converted or treated as Digital output as there are no analog output
@@ -419,7 +419,7 @@ the arduino. The PC will also serve as an HMI to display the process
 values and log the process values which will be used for trending.
 
 \subsection{Software}
-\label{sec:org1cc2662}
+\label{sec:org72a3899}
 The aruduino will be configured as a webserver and the PC will act as
 a client. The following sofware will be used for this implementation:
 \begin{itemize}
@@ -435,26 +435,26 @@ a client. The following sofware will be used for this implementation:
 \end{itemize}
 
 \subsubsection{Arduino programmer \emph{\emph{check}}}
-\label{sec:org12b928f}
+\label{sec:orgf5800af}
 This is used to develop debug and download the code to the
 controller. The control files are created with .ino extension
 
 \subsubsection{WAMP/LAMP stack}
-\label{sec:org1904666}
+\label{sec:org5c40965}
 \begin{enumerate}
 \item Windows/Linux
-\label{sec:orga807008}
+\label{sec:org9c1cd6c}
 The operating system for the PC could either be Windows / Linux. This
 will be the host for the other software such as the webserver,
 database server and Python/PHP.
 \item Apache Webserver
-\label{sec:orgd2b9e2b}
+\label{sec:orgecd09b0}
 << \emph{Insert Apache configuration here} >>
 \item mySQL
-\label{sec:orgc3fa1a0}
+\label{sec:org87851f7}
 << \emph{Insert mySQL configuration here} >>
 \item PHP/Python
-\label{sec:orgacaee96}
+\label{sec:org5809311}
 << \emph{Insert PHP/Python code here} >> 
 
 PHP code identified for use is listed below. The following code is a
@@ -463,7 +463,7 @@ working code.
 
 \begin{itemize}
 \item dbconfig.php
-\label{sec:orgc6a7b30}
+\label{sec:orgc95a10a}
 \begin{verbatim}
 <?php
 define('DB_USER', "testuser");     // Your database user name
@@ -475,7 +475,7 @@ define('DB_SERVER', "localhost");  // db server (Mostly will be 'local' host)
 \end{verbatim}
 
 \item dbconnect.php
-\label{sec:orge46cf52}
+\label{sec:orged1535f}
 \begin{verbatim}
 <?php
 
@@ -522,7 +522,7 @@ class DB_CONNECT {
 ?>
 \end{verbatim}
 \item insert.php
-\label{sec:orgef94d73}
+\label{sec:orgea05907}
 \begin{verbatim}
 <?php
 
@@ -576,7 +576,7 @@ if (isset($_GET['temp']) && isset($_GET['hum'])) {
 ?>
 \end{verbatim}
 \item readall.php
-\label{sec:org33845a3}
+\label{sec:org53d66ab}
 \begin{verbatim}
 <?php
 
@@ -633,17 +633,17 @@ else
 \end{verbatim}
 \end{itemize}
 \item HTML/CSS/JavaScript
-\label{sec:orgdc0e42c}
+\label{sec:orgfb6fca0}
 << \emph{Insert HTML/CSS/JavaScript code here} >>
 \item {\bfseries\sffamily TODO} 
-\label{sec:org3d54258}
+\label{sec:orgbc89417}
 \begin{itemize}
 \item[{$\square$}] include org-babel execute function for HTML
 \item[{$\square$}] create stylesheet and move CSS information
 \item[{$\square$}] create object for valve - two part valve - left side shows DO - right side shows feedback
 \end{itemize}
 \item HTML code
-\label{sec:org8de05df}
+\label{sec:org6eb354a}
 \begin{verbatim}
 <!DOCTYPE html>
 <html>
@@ -676,7 +676,7 @@ else
 \end{verbatim}
 
 \item CSS code
-\label{sec:orgc4a38b4}
+\label{sec:org24400b3}
 \begin{verbatim}
 
 #tt853   {
@@ -739,18 +739,18 @@ else
 \end{enumerate}
 
 \section{Bill of Material}
-\label{sec:orge28e68a}
+\label{sec:orgf7dc073}
 << \emph{Insert BOM here} >>
 \clearpage
 \section{Conclusion}
-\label{sec:orgc24ae22}
+\label{sec:org5066801}
 The proposed solution in this paper shall meet its objective of
 reducing the cycle time of D-301 blender by removing the dependency of
 the truck for NC-701 material. It will also ensure that the quality of
 the blending product is improved by regulating the product
 temperature.
 \section{References}
-\label{sec:org70fc1e5}
+\label{sec:org3591b14}
 \begin{enumerate}
 \item \href{https://www.controlglobal.com/assets/knowledge\_centers/abb/assets/Benefits-of-state-based-control-white-paper.pdf}{Benefits of State Based Control}
 \end{enumerate}

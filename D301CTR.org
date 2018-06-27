@@ -1,7 +1,7 @@
 #+TITLE: Cycle Time Reduction of D-301 Blender
 #+SUBTITLE:  
 #+AUTHOR: Santhanaraj Chellaiah
-#+DATE: Jan 8, 2018
+#+DATE: Apr 30, 2018
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [a4paper,oneside] 
 #+LATEX_HEADER:
@@ -282,9 +282,6 @@ valves
 #+CAPTION: Line clear
 [[/home/prasanna/Documents/git/CSR/images/LineClear.png]]
 #+latex: \clearpage
-* P & ID
-<< /Insert P & ID here/ >>
-#+latex: \clearpage
 * IO list
     #+NAME: IO List 
     #+CAPTION: IO List for D-12516 tank addition
@@ -326,7 +323,9 @@ valves
 | LIT20805 | 140  | AI   | dP Level [%]                    | D12516  | 0      | 100      |
 | LSH20802 | 183  | AI   | Level Switch                    | D12516  | high   | not high |
 
-Based on the proposed control narrative, the following IO count would be required to realize the project. 
+Based on the proposed control narrative, the following IO count would
+be required to realize the project.
+
 | S.No. | IO Type | IO Qty |
 | <c>   | <c>     | <c>    |
 |-------+---------+--------|
@@ -341,7 +340,7 @@ Based on the proposed control narrative, the following IO count would be require
 #+CAPTION: Implementation architecture showing Arduino, SQL dB & Web-browser interface
 [[/home/prasanna/Documents/git/CSR/images/architecture.jpg]]
 #+latex: \clearpage
-** Hardware
+** Hardware (Out-of-scope for this project)
 Based on the above architecture, Arduino Mega 2560 shall be used as
 the microcontroller for interfacing all the field IO. The AO shall be
 converted or treated as Digital output as there are no analog output
@@ -362,7 +361,7 @@ values and log the process values which will be used for trending.
 ** Software
 The aruduino will be configured as a webserver and the PC will act as
 a client. The following sofware will be used for this implementation:
- - Arduino programmer //check//
+ - Arduino programmer - /Out-of-scope for this project/
  - WAMP / LAMP stack
    - Windows / Linux
    - Apache web server
@@ -370,35 +369,55 @@ a client. The following sofware will be used for this implementation:
    - PHP or Python
    - HTML/CSS/JavaScript
 
-*** Arduino programmer //check//
-This is used to develop debug and download the code to the
-controller. The control files are created with .ino extension
-
-*** WAMP/LAMP stack
+*** WAMP/XAMPP stack
 **** Windows/Linux
 The operating system for the PC could either be Windows / Linux. This
 will be the host for the other software such as the webserver,
 database server and Python/PHP.
 **** Apache Webserver
-<< /Insert Apache configuration here/ >>
+The Apache webserver, which is installed as a part of the WAMP/XAMPP
+stack will serve as the webserver to host our local page in the
+laptop.  This will return a webpage when user calls the browser with
+http://localhost call.
 **** mySQL
-<< /Insert mySQL configuration here/ >>
-**** PHP/Python
-<< /Insert PHP/Python code here/ >> 
+MySQL database will serve as a default database. This is used to log
+simulation/hardware generated analog values to the DB. The intention
+is to use this data in the future to plot trends. Plotting trends is
+out-of-scope for this project.
+**** PHP
+PHP is the piece of software that is used to pass data from Javascipt
+to the MySQL dB. Two files that are listed below are used to connect
+to the database (connect.php) and to insert data to the dB
+(insert.php).
+This implementation uses PDO method instead of the legacy mysqli method.
 
-PHP code identified for use is listed below. The following code is a
-placeholder and needs to be further customized to have a complete
-working code.
-
-***** dbconfig.php
+***** connect.php
 #+BEGIN_SRC 
-<?php
-define('DB_USER', "testuser");     // Your database user name
-define('DB_PASSWORD', "test123");  // Your database password (mention your db password here)
-define('DB_DATABASE', "TESTDB");   // Your database name
-define('DB_SERVER', "localhost");  // db server (Mostly will be 'local' host)
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hello PHP page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+<?php echo '<p> Hello World </p>'; 
+// phpinfo();
+// $variable = $_POST['fname'];
+// echo $variable;
+try {
+    $db = new PDO('mysql:host=localhost;dbname=process;charset=utf8','root','');
+    // var_dump($db) ;
+}
+catch(Exception $e){
+    echo $e->getMessage();
+}
 ?>
+</body>
+</html>
 #+END_SRC
 
 ***** dbconnect.php
