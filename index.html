@@ -1,0 +1,93 @@
+<html lang="en">
+    <head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+	  <link rel="stylesheet" type="text/css" href="index.css">
+
+	 <!-- If you are opening this page from local machine, uncomment below line -->
+
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+	<title>D301 Cycle Time Reduction</title>
+
+</head>
+<script type="text/javascript" src="index.js"></script>
+<body>
+	<h2 id="topline">D301 CYCLE TIME REDUCTION PROJECT</h2>
+
+<div id="stepButtons">
+	<h3> Select Step </h3>
+	<p><button id="stepMWButton" type="button"
+	onclick="document.getElementById('activestep').innerHTML = MaintWait()">
+	Maintenance Wait</button></p>
+
+	<p><button id="stepPWButton" type="button"
+	onclick="document.getElementById('activestep').innerHTML = ProcessWait()">
+	Process Wait</button></p>
+
+	<p><button id="stepRecycleButton" type="button"
+	onclick="document.getElementById('activestep').innerHTML = Recycle()">
+	Recycle</button></p>
+
+	<p><button id="stepTransferButton" type="button"
+	onclick="document.getElementById('activestep').innerHTML = Transfer()">
+	Transfer</button></p>
+
+	<p><button id="stepUnloadButton" type="button"
+	onclick="document.getElementById('activestep').innerHTML = Unload()">
+	Unload</button>  
+	<span>Start:<input type="checkbox" id="readytounload" onclick="OpReadyToUnload()">
+	</span></p>
+
+	<p><button id="stepDirectTransferButton" type="button"
+	onclick="document.getElementById('activestep').innerHTML = DirectTransfer()">
+	DirectTransfer</button> 
+	<span>Start:<input type="checkbox" id="readytodirecttransfer" onclick="OpReadyToDirectTransfer()">
+	</span></p>
+
+	<p><button id="stepLineClearButton" type="button"
+	onclick="document.getElementById('activestep').innerHTML = LineClear()">
+	LineClear</button></p>
+
+	LineClearTimer: <p id="lineclearcountdown"></p>
+
+	<h4>NC-701 Temperature SP</h4>
+	<button type="button" onclick="TempSP()">Submit</button>
+	<input id="TempSP" size="5">
+
+</div>
+
+<img id="d301png" src="D301.png" alt="D301">
+
+<p id="activestep"> </p>
+<p id="LIT805"> </p>
+<p id="PIT804"></p>
+<p id="PT810"> </p>
+<p id="JT809"> </p>
+<p id="JT854"> </p>
+<p id="PT852"> </p>
+<p id="TT807"> </p>
+<p id="TT808"> </p>
+<p id="TT806"> </p>
+<p id="TT853"> </p>
+
+
+<p id="mp516a"></p><img id="imgmp516a">
+<p id="mp516t"></p><img id="imgmp516t">
+<p id="ABV811"></p><img id="imgABV811">
+<p id="ABV812"></p><img id="imgABV812">
+<p id="ABV813"></p><img id="imgABV813">
+<p id="ABV814"></p><img id="imgABV814">
+<p id="ABV815"></p><img id="imgABV815">
+<p id="ABV816"></p><img id="imgABV816">
+<p id="ABV851"></p><img id="imgABV851">
+<p id="ABV850"></p><img id="imgABV850">
+
+</body>
+
+
+</html>
+
+
+
